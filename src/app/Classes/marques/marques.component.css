@@ -1,0 +1,61 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-family: "Arial Black", sans-serif;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 300px;
+    margin: 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sponsor:hover {
+    transform: translateY(-10px);
+  }
+  
+  .sponsor-image {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sponsor-image img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .sponsor-name {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #2a2a2a;
+  }
+  

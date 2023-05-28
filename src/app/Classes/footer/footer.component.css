@@ -1,0 +1,53 @@
+.menu_footer {
+    font-family: "Athiti", sans-serif;
+    
+  }
+  .menu_footer p:hover {
+    color: orange;
+    transition: ease-in-out;
+    transition: 0.7s;
+    font-family: "Athiti", sans-serif;
+    display: block;
+    cursor: pointer;
+    
+  }
+  
+  .menu_footer p {
+    color: white;
+   
+  }
+  .menu_footer p:hover::after {
+    width: 100%;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    transition: 1.2;
+    color: orange;
+  }
+  input {
+    border-bottom: 1px solid white;
+    border: none;
+    padding: 15px;
+  }
+  .input_left {
+    border-radius: 40px 10px 10px 40px;
+    cursor: pointer;
+    color: white;
+    border: 2px solid black;
+    background: transparent;
+  }
+  .input_right {
+    border-radius: 10px 40px 40px 10px;
+    cursor: pointer;
+    background-color: orange;
+    border: 2px solid black;
+  }
+  .input_right:hover {
+    background-color: rgb(207, 136, 5);
+    box-shadow: 2px 2px 2px black;
+  }
+  .actif{
+    color:orange;
+  }

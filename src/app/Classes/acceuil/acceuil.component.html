@@ -1,0 +1,408 @@
+<div id="silder">
+  <img
+    [src]="mySource"
+    src="assets/Images/right.png"
+    style="height: 400px; width: 100%"
+  />
+  <div id="btn_left">
+    <img
+      (click)="silder(-1)"
+      class="left"
+      style="width: 70px; margin-top: -500px"
+      src="assets/Images/left.png"
+    />
+  </div>
+  <div id="btn_rigth">
+    <img
+      (click)="silder(1)"
+      style="width: 70px; margin-top: -550px; margin-left: 1400px"
+      class="right"
+      src="assets/Images/right.png"
+    />
+  </div>
+</div>
+
+<div style="margin-right: 30px">
+  <div class="section-title">
+    <h2>
+      Nos Promotion <span style="color: rgb(170, 13, 13)"> Exeptionelle</span>
+    </h2>
+  </div>
+
+  <div style="width: 1100px; margin-left: 200px">
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let food of foods">
+        <div class="product-grid" *ngIf="food.promotion != 0">
+          <div class="product-image">
+            <a href="#" class="image">
+              <img class="pic-1" [src]="food.photo" />
+            </a>
+            <span class="product-discount-label">- {{ food.promotion }}%</span>
+            <ul class="product-links">
+              <li>
+                <a href="#" data-tip="Add to Wishlist">
+                  <i class="fas fa-heart"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-tip="Compare">
+                  <i class="fa fa-random"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-tip="Quick View">
+                  <i class="fa fa-search"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="product-content">
+            <ul class="rating">
+              <li class="fas fa-star"></li>
+              <li class="fas fa-star"></li>
+              <li class="fas fa-star"></li>
+              <li class="far fa-star"></li>
+              <li class="far fa-star"></li>
+            </ul>
+            <h3 class="title">
+              <a
+                href="#"
+                style="text-decoration: none"
+                [routerLink]="['/prod', food.idProduit]"
+                >{{ food.designation }}</a
+              >
+            </h3>
+            <div class="price">
+              <span *ngIf="food.promotion != 0">
+                {{ food.prix + (food.prix * food.promotion) / 100 }}DT</span
+              >
+              <div>{{ food.prix }}DT</div>
+            </div>
+            <a class="add-to-cart" href="#" style="text-decoration: none"
+              >add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let materiel of materiels">
+        <div class="product-grid" *ngIf="materiel.promotion != 0">
+          <div class="product-image">
+            <a href="#" class="image">
+              <img class="pic-1" [src]="materiel.photo" />
+            </a>
+            <span class="product-discount-label">
+              - {{ materiel.promotion }}%
+            </span>
+            <ul class="product-links">
+              <li>
+                <a href="#" data-tip="Add to Wishlist">
+                  <i class="fas fa-heart"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-tip="Compare">
+                  <i class="fa fa-random"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" data-tip="Quick View">
+                  <i class="fa fa-search"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="product-content">
+            <ul class="rating">
+              <li class="fas fa-star"></li>
+              <li class="fas fa-star"></li>
+              <li class="fas fa-star"></li>
+              <li class="far fa-star"></li>
+              <li class="far fa-star"></li>
+            </ul>
+            <h3 class="title">
+              <a
+                href="#"
+                style="text-decoration: none"
+                [routerLink]="['/prod', materiel.idProduit]"
+                >{{ materiel.designation }}</a
+              >
+            </h3>
+            <div class="price">
+              <span *ngIf="materiel.promotion != 0">
+                {{
+                  materiel.prix + (materiel.prix * materiel.promotion) / 100
+                }}DT
+              </span>
+              <div>{{ materiel.prix }}DT</div>
+            </div>
+            <a class="add-to-cart" href="#" style="text-decoration: none"
+              >add to cart</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <h2>Nos Categories</h2>
+  </div>
+
+  <div style="display: flex">
+    <div class="card" style="width: 500px; margin-left: 100px">
+      <img src="assets/Images/Acceuil/Performance.jpg" style="height: 525px" />
+      <div class="card-img-overlay" style="padding-top: 350px">
+        <div
+          class="bg-white"
+          style="
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-bottom: 100px;
+            height: 130px;
+          "
+        >
+          <h6
+            class="card-title"
+            style="
+              padding-left: 70px;
+              color: black;
+              font-weight: bolder;
+              padding-top: 10px;
+            "
+          >
+            Performance
+          </h6>
+          <p class="card-text" style="color: black">
+            <span style="padding-left: 50px; padding-bottom: 20px">
+              booster votre performance </span
+            ><br />
+            <a
+              href="#"
+              class="btn btn-dark"
+              style="margin-left: 80px"
+              [routerLink]="['/produit', 'performance']"
+              >Découvrir</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="width: 800px; height: 250px; margin-left: 100px">
+        <img src="assets/1.jpg" style="height: 250px" />
+        <div class="card-img-overlay" style="padding-top: 110px">
+          <div
+            class="bg-white"
+            style="
+              margin-left: 80px;
+              margin-right: 80px;
+              margin-bottom: 100px;
+              height: 110px;
+              width: 300px;
+            "
+          >
+            <h6
+              class="card-title"
+              style="
+                padding-left: 80px;
+                color: black;
+                font-weight: bolder;
+                padding-top: 10px;
+              "
+            >
+              Prise de masse
+            </h6>
+            <p class="card-text" style="color: black">
+              <span
+                style="
+                  padding-left: 50px;
+                  padding-bottom: 20px;
+                  padding-left: 82px;
+                "
+                >Augumenter votre masse </span
+              ><br />
+              <a
+                href="#"
+                class="btn btn-dark"
+                style="margin-left: 100px"
+                [routerLink]="['/produit', 'prise']"
+                >Découvrir</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex">
+        <div
+          class="card"
+          style="
+            width: 350px;
+            height: 250px;
+            margin-left: 100px;
+            margin-top: 20px;
+          "
+        >
+          <img src="assets/2.jpg" style="height: 250px" />
+          <div class="card-img-overlay" style="padding-top: 110px">
+            <div class="bg-white" style="margin-bottom: 100px; height: 130px">
+              <h6
+                class="card-title"
+                style="
+                  padding-left: 70px;
+                  color: black;
+                  font-weight: bolder;
+                  padding-top: 10px;
+                "
+              >
+                Perds du masse
+              </h6>
+              <p class="card-text" style="color: black">
+                <span
+                  style="
+                    padding-left: 50px;
+                    padding-bottom: 20px;
+                    padding-left: 92px;
+                  "
+                  >Decouvrer nos astuces </span
+                ><br />
+                <a
+                  href="#"
+                  class="btn btn-dark"
+                  style="margin-left: 100px"
+                  [routerLink]="['/produit', 'perd']"
+                  >Découvrir</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card"
+          style="
+            width: 350px;
+            height: 250px;
+            margin-left: 100px;
+            margin-top: 20px;
+          "
+        >
+          <img src="assets/3.jpg" style="height: 250px" />
+          <div class="card-img-overlay" style="padding-top: 110px">
+            <div class="bg-white" style="margin-bottom: 100px; height: 130px">
+              <h6
+                class="card-title"
+                style="
+                  padding-left: 60px;
+                  color: black;
+                  font-weight: bolder;
+                  padding-top: 10px;
+                "
+                [routerLink]="['/produit', 'sante']"
+              >
+                Santé&Biens_être
+              </h6>
+              <p class="card-text" style="color: black">
+                <span
+                  style="
+                    padding-left: 50px;
+                    padding-bottom: 20px;
+                    padding-left: 92px;
+                  "
+                >
+                  Pour se santé bien </span
+                ><br />
+                <a
+                  href="#"
+                  class="btn btn-dark"
+                  style="margin-left: 100px"
+                  [routerLink]="['/produit', 'sante']"
+                  >Découvrir</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<!--Les bloc -->
+<div class="bodycentre">
+  <div class="cards-container">
+    <div class="card-item">
+      <img
+        src="assets/echange.png"
+        alt="Echange Facile et rapide"
+        style="
+          width: 130px;
+          height: 130px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+        class="test"
+      />
+      <div class="card-item-text">
+        <h6>ECHANGE FACILE ET RAPIDE</h6>
+        <p>Les échanges n'ont jamais été aussi simple chez NutriScape.</p>
+      </div>
+    </div>
+    <div class="card-item">
+      <img
+        src="assets/paiment.png"
+        alt="Paiement en ligne sécurisé"
+        style="
+          width: 130px;
+          height: 130px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+        class="test"
+      />
+      <div class="card-item-text">
+        <h6>PAIEMENT EN ESPECES A LA LIVRAISON</h6>
+        <p>Commander en ligne et payez en espéces à la livraison</p>
+      </div>
+    </div>
+    <div class="card-item">
+      <img
+        src="assets/securite.png"
+        alt="Sécurité garantie"
+        style="
+          width: 130px;
+          height: 130px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+        class="test"
+      />
+      <div class="card-item-text">
+        <h6>PAIEMENT SECURISE</h6>
+        <p>Tous les transactions sur notre site sont sécurisés et fiables.</p>
+      </div>
+    </div>
+    <div class="card-item">
+      <img
+        src="assets/localisation.png"
+        alt="Localisation de nos points de vente"
+        style="
+          width: 130px;
+          height: 130px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+        class="test"
+      />
+      <div class="card-item-text">
+        <h6>LIVRAISON RAPIDE</h6>
+        <p>
+          Profitez de nos services de livraison rapides et fiables pour recevoir
+          vos produits directement chez vous.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

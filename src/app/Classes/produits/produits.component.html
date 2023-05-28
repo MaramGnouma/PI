@@ -1,0 +1,191 @@
+<br />
+<div style="display: flex">
+  <div class="filter-container" style="width: 400px">
+    <button type="button" class="btn btn-danger btn-lg mb-2">
+      Filter selon votre choix
+    </button>
+    <div class="checkbox-container">
+      <div>
+        <input type="checkbox" id="foodCheckbox" [(ngModel)]="checkfood" />
+        <label for="foodCheckbox">Foods</label> <br />
+        <input
+          type="radio"
+          name="food"
+          id="foodCheckbox"
+          [(ngModel)]="chechsante"
+          (click)="filtreSante()"
+          style="margin-left: 20px"
+        />
+        <label for="foodCheckbox">Santé</label> <br />
+        <input
+          type="radio"
+          name="food"
+          id="foodCheckbox"
+          checked="chechperf"
+          (click)="filtrePerformance()"
+          style="margin-left: 20px"
+        />
+        <label for="foodCheckbox">performance</label> <br />
+        <input
+          type="radio"
+          name="food"
+          id="foodCheckbox"
+          checked="checkperd"
+          (click)="filtrePerdre()"
+          style="margin-left: 20px"
+        />
+        <label for="foodCheckbox">perdre du poids</label> <br />
+        <input
+          type="radio"
+          name="food"
+          id="foodCheckbox"
+          checked="checkgain"
+          (click)="filtreGain()"
+          style="margin-left: 20px"
+        />
+        <label for="foodCheckbox">Prise du poids</label> <br />
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="materialCheckbox"
+          [(ngModel)]="checkmateriel"
+        />
+        <label for="materialCheckbox">Materiels</label> <br />
+      </div>
+    </div>
+  </div>
+  <div style="margin-right: 100px">
+    <!--Produits -->
+    <div style="width: 1100px">
+      <div *ngIf="checkmateriel" class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let materiel of filTabMateriel">
+          <div class="product-grid">
+            <div class="product-image">
+              <a href="#" class="image">
+                <img class="pic-1" [src]="materiel.photo" />
+              </a>
+              <span
+                class="product-discount-label"
+                *ngIf="materiel.promotion != 0"
+              >
+                - {{ materiel.promotion }}%
+              </span>
+              <ul class="product-links">
+                <li>
+                  <a href="#" data-tip="Add to Wishlist">
+                    <i class="fas fa-heart"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-tip="Compare">
+                    <i class="fa fa-random"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-tip="Quick View">
+                    <i class="fa fa-search"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="product-content">
+              <ul class="rating">
+                <li class="fas fa-star"></li>
+                <li class="fas fa-star"></li>
+                <li class="fas fa-star"></li>
+                <li class="far fa-star"></li>
+                <li class="far fa-star"></li>
+              </ul>
+              <h3 class="title">
+                <a
+                  href="#"
+                  style="text-decoration: none"
+                  [routerLink]="['/prod', materiel.idProduit]"
+                  >{{ materiel.designation }}</a
+                >
+              </h3>
+              <div class="price">
+                <span *ngIf="materiel.promotion != 0">
+                  {{
+                    materiel.prix + (materiel.prix * materiel.promotion) / 100
+                  }}DT
+                </span>
+                <div>{{ materiel.prix }}DT</div>
+              </div>
+              <a class="add-to-cart" href="#" style="text-decoration: none" (click)="addToCart(materiel)"
+                >add to cart</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+
+      <!--Food -->
+      <div style="width: 1100px">
+        <div *ngIf="checkfood" class="row">
+          <div class="col-md-3 col-sm-6" *ngFor="let food of filTabFood">
+            <div class="product-grid">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img class="pic-1" [src]="food.photo" />
+                </a>
+                <span class="product-discount-label" *ngIf="food.promotion != 0"
+                  >- {{ food.promotion }}%</span
+                >
+                <ul class="product-links">
+                  <li>
+                    <a href="#" data-tip="Add to Wishlist">
+                      <i class="fas fa-heart"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" data-tip="Compare">
+                      <i class="fa fa-random"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" data-tip="Quick View">
+                      <i class="fa fa-search"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content">
+                <ul class="rating">
+                  <li class="fas fa-star"></li>
+                  <li class="fas fa-star"></li>
+                  <li class="fas fa-star"></li>
+                  <li class="far fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h3 class="title">
+                  <a
+                    href="#"
+                    style="text-decoration: none"
+                    [routerLink]="['/prod', food.idProduit]"
+                    >{{ food.designation }}</a
+                  >
+                </h3>
+                <div class="price">
+                  <span *ngIf="food.promotion != 0">
+                    {{ food.prix + (food.prix * food.promotion) / 100 }}DT</span
+                  >
+                  <div>{{ food.prix }}DT</div>
+                </div>
+                <a class="add-to-cart" href="#" style="text-decoration: none" (click)="addToCart(food)"
+                  >add to cart</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+  </div>
+</div>

@@ -1,0 +1,135 @@
+<!-- Premier entete avec la couleur grise -->
+<div class="entete">
+  <div class="entete_gauche">
+    <i class="fa-regular fa-envelope"></i><span>NutriScape@gmail.com</span>
+    <span>|</span>
+    <span>Bienvenue chez NutriScape</span>
+  </div>
+  <div class="entete_droit">
+    <span>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin-in"></i>
+      <i class="fa-brands fa-pinterest-p"></i>
+    </span>
+  </div>
+</div>
+
+<div style="height: 80px">
+  <div style="display: flex">
+    <div class="col-lg-3 col-md-3">
+      <div>
+        <img
+          src="assets/Images/Icones/logo.png"
+          alt=""
+          style="height: 80px; padding-left: 100px;margin-top: 20px;"
+        />
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+      <div class="header__menu">
+        <ul>
+          <li><a routerLink="/acceuil">Acceuil</a></li>
+          <li><a routerLink="/produit">Produits</a></li>
+          <li><a routerLink="/marque">Marques</a></li>
+          <li><a routerLink="/propos">A propos</a></li>
+
+          <li>
+            <div style="background-color: crimson; width: 250px">
+              <a routerLink="/diagnostic">
+                <span style="color: antiquewhite">IMC pré-diagnostic gratuit</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-3" style="padding-right: 50px">
+      <div class="header__nav__option">
+        <a href="#" class="search-switch">
+          <img src="assets/Images/Icones/search.png" alt="" />
+        </a>
+
+        <span (click)="openpopup()" style="margin-right: 15px">
+          <img src="assets/Images/Icones/user.png" style="width: 20px; height: 20px" alt="" />
+        </span>
+        <a routerLink="/listepanier">
+          <img src="assets/Images/Icones/cart.png" alt="" /><span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<!-- Pop-up -->
+
+
+<section>
+  <div
+    class="page"
+    id="exampleModalLong"
+    aria-labelledby="exampleModalLong2"
+    hidden="true"
+  >
+    <div class="welcome" style="background-image: url('assets/sport.jpg')">
+      <h2>Welcome Back!</h2>
+      <button class="sign_in">Sign In</button>
+      <button class="btn">Sign Up</button>
+    </div>
+    <div class="sign_up">
+      <form method="POST" action="signup_user.php">
+        <h2>Sign Up your Account</h2>
+        <input type="text" name="name" placeholder="Full Name" required /><br />
+        <input type="email" name="email" placeholder="Email" required /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        /><br />
+        <input type="submit" name="sign_up" value="Sign Up" class="up" />
+      </form>
+      <span (click)="closepopup()" style="margin-left: 450px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x-square-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"
+          />
+        </svg>
+      </span>
+    </div>
+    <div class="login">
+      <form method="POST" action="login_user.php">
+        <h2>Login your Account</h2>
+        <input type="email" name="email" placeholder="Email" required /><br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        /><br /><br /><br />
+
+        <input type="submit" name="sign_in" value="Sign In" class="in" />
+      </form>
+      <span (click)="closepopup()" style="margin-left: -450px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x-square-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+</section>

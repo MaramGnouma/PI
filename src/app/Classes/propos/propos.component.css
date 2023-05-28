@@ -1,0 +1,17 @@
+.about-us {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .about-us-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px 0;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  

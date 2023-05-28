@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Nos Sponsors</h1>
+  <div class="sponsors">
+    <div *ngFor="let sponsor of sponsors" class="sponsor">
+      <div class="sponsor-image">
+        <img [src]="sponsor.image" [alt]="sponsor.name" />
+      </div>
+      <h3 class="sponsor-name">{{ sponsor.name }}</h3>
+    </div>
+  </div>
+</div>
