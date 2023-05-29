@@ -20,7 +20,15 @@ export class MarquesComponent implements OnInit {
     },
     {
       name: 'Sponsor 3',
-      image: 'assets/3.png',
+      image: 'assets/lysi.png',
+    },
+    {
+      name: 'Sponsor 4',
+      image: 'assets/iron.png',
+    },
+    {
+      name: 'Sponsor 5',
+      image: 'assets/scitec.png',
     },
   ];
 }

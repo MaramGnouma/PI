@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Food } from 'src/app/Models/food';
 import { Matériels } from 'src/app/Models/matériels';
 import { FoodServService } from 'src/app/Services/food-serv.service';
@@ -20,7 +21,7 @@ export class ProduitsComponent implements OnInit {
   checkperd: boolean = false;
   checkgain: boolean = false;
   chechperf: boolean = false;
-  listpanier: any[] = []; // Remplacez le type 'any' par le type approprié pour les produits du panier
+  checktous: boolean = true;
 
   typ!: string;
 
@@ -28,12 +29,15 @@ export class ProduitsComponent implements OnInit {
   filTabFood: Food[] = []; // Initialisation de filTabFood avec un tableau vide
   filTabMateriel: Matériels[] = []; // Initialisation de filTabMateriel avec un tableau vide
 
+  produitDetailleAchat!: FormGroup;
   constructor(
     private materielServ: MaterielServService,
     public activeroute: ActivatedRoute,
-    private foodServ: FoodServService
+    private foodServ: FoodServService,
+    public router: Router
   ) {}
 
+  produit!: Matériels;
   ngOnInit(): void {
     this.getMatériels();
     this.getfoodss();
@@ -83,44 +87,30 @@ export class ProduitsComponent implements OnInit {
   filtreGain(): void {
     this.filTabFood = this.foods.filter((e) => e.type == 'prise');
   }
-  addToCart(product: any) {
-    // Vérifiez si le produit existe déjà dans le panier
-    const existingProduct = this.listpanier.find(item => item.idProduit === product.idProduit);
-
-    if (existingProduct) {
-      // Le produit existe déjà dans le panier, augmentez simplement la quantité
-      existingProduct.quantite += 1;
-    } else {
-      // Le produit n'existe pas dans le panier, ajoutez-le avec une quantité de 1
-      const newProduct = {
-        idProduit: product.idProduit,
-        designation: product.designation,
-        price: product.prix,
-        quantite: 1,
-        photo: product.photo
-      };
-
-      this.listpanier.push(newProduct);
-    }
+  filtreTous(): void {
+    this.filTabFood = this.foods;
   }
 
-  removeFromCart(product: any) {
-    // Recherchez l'index du produit dans le panier
-    const index = this.listpanier.findIndex(item => item.idProduit === product.idProduit);
+  addtoCart() {
+    console.log(this.produit);
+    let cart: Matériels[] = JSON.parse(localStorage.getItem('cart') || '[]');
+    let x: any = JSON.parse(localStorage.getItem('quantite') || '[]');
 
-    if (index !== -1) {
-      // Supprimez le produit du panier
-      this.listpanier.splice(index, 1);
-    }
-  }
+    if (
+      cart.filter((e) => e.idProduit != this.produit.idProduit).length ==
+      cart.length
+    ) {
+      cart.push(this.produit);
+      x.push([
+        this.produitDetailleAchat.value['quantite'],
+        this.produit.idProduit,
+      ]);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('quantite', JSON.stringify(x));
 
-  getTotalPrice(): number {
-    let totalPrice = 0;
+      alert('Product added to cart!');
+    } else alert('Product already in Cart!');
 
-    for (const product of this.listpanier) {
-      totalPrice += product.price * product.quantity;
-    }
-
-    return totalPrice;
+    // this.router.navigate(['/store']);
   }
 }

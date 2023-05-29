@@ -22,7 +22,7 @@
         <img
           src="assets/Images/Icones/logo.png"
           alt=""
-          style="height: 80px; padding-left: 100px;margin-top: 20px;"
+          style="height: 80px; padding-left: 100px; margin-top: 20px"
         />
       </div>
     </div>
@@ -37,8 +37,10 @@
           <li>
             <div style="background-color: crimson; width: 250px">
               <a routerLink="/diagnostic">
-                <span style="color: antiquewhite">IMC pré-diagnostic gratuit</span>
-              </a>
+                <span style="color: antiquewhite"
+                  >IMC pré-diagnostic gratuit
+                </span></a
+              >
             </div>
           </li>
         </ul>
@@ -46,22 +48,26 @@
     </div>
     <div class="col-lg-3 col-md-3" style="padding-right: 50px">
       <div class="header__nav__option">
-        <a href="#" class="search-switch">
-          <img src="assets/Images/Icones/search.png" alt="" />
-        </a>
+        <a href="#" class="search-switch"
+          ><img src="assets/Images/Icones/search.png" alt=""
+        /></a>
 
         <span (click)="openpopup()" style="margin-right: 15px">
-          <img src="assets/Images/Icones/user.png" style="width: 20px; height: 20px" alt="" />
+          <img
+            src="assets/Images/Icones/user.png"
+            style="width: 20px; height: 20px"
+            alt=""
+          />
         </span>
-        <a routerLink="/listepanier">
-          <img src="assets/Images/Icones/cart.png" alt="" /><span></span>
+        <a routerLink="/panier"
+          ><img src="assets/Images/Icones/cart.png" alt="" /><span></span>
         </a>
       </div>
     </div>
   </div>
+</div>
 
-<!-- Pop-up -->
-
+<!-- //popup -->
 
 <section>
   <div
@@ -76,15 +82,31 @@
       <button class="btn">Sign Up</button>
     </div>
     <div class="sign_up">
-      <form method="POST" action="signup_user.php">
+      <form method="POST" (ngSubmit)="onSubmit()" style="margin-left: 80px">
         <h2>Sign Up your Account</h2>
-        <input type="text" name="name" placeholder="Full Name" required /><br />
-        <input type="email" name="email" placeholder="Email" required /><br />
+        <input
+          type="text"
+          class="form-control"
+          id="nom"
+          [(ngModel)]="clients.nom"
+          placeholder="donner votre nom"
+          name="nom"
+        /><br />
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="donner votre mail"
+          [(ngModel)]="clients.email"
+          name="email"
+        /><br />
         <input
           type="password"
-          name="password"
-          placeholder="Password"
-          required
+          class="form-control"
+          id="mdp"
+          placeholder="donner votre password"
+          [(ngModel)]="clients.mdp"
+          name="mdp"
         /><br />
         <input type="submit" name="sign_up" value="Sign Up" class="up" />
       </form>

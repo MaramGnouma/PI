@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <h1
   style="
     color: rgb(0, 242, 255);
@@ -32,7 +33,7 @@
 </h2>
 <br />
 <br /><br />
-<div style="display: flex; margin-left: 100px">
+<div style="display: flex; margin-left: 400px">
   <div>
     <p style="text-align: center">
       Il se calcule simplement en divisant le poids (en kg) par le carré<br />
@@ -41,29 +42,27 @@
       vous<br />
       suffit de compléter les champs ci-dessous.
     </p>
-    <form style="width: 400px; height: 300px" id="formIMC">
+    <form [formGroup]="imcForm" style="width: 600px; height: 300px" id="formIMC">
       <div class="form-group">
-        <label for="taille">Indiquer votre taille en cm</label>
-        <input
-          type="text"
-          class="form-control"
-          id="taille"
-          placeholder="Entrez votre taille en cm" 
-          [(ngModel)]="taille" name="taille"
-        />
+        <label for="taille">Indiquez votre taille en cm</label>
+        <input type="text" class="form-control" id="taille" placeholder="Entrez votre taille en cm" formControlName="taille" />
+        <div *ngIf="isValidtaille()" class="alert alert-danger">
+          {{ tailleErrorMessage }}
+        </div>
       </div>
+      
       <div class="form-group">
-        <label for="poids">Indiquer votre poids en kg</label>
-        <input
-          type="text"
-          class="form-control"
-          id="poids"
-          placeholder="Entrez votre poids en kg"
-          [(ngModel)]="poids" name="poids"
-        />
+        <label for="poids">Indiquez votre poids en kg</label>
+        <input type="text" class="form-control" id="poids" placeholder="Entrez votre poids en kg" formControlName="poids" />
+        <div *ngIf="isValidpoids()" class="alert alert-danger">
+          {{ poidsErrorMessage }}
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="calculerIMC()">Calculer</button>
+      <br>
+      <button type="submit" class="btn btn-primary" [disabled]="imcForm.invalid" (click)="calculerIMC()" style="margin-left: 150px;">Calculer</button>
     </form>
+    
+    
   </div>
   <div><img src="assets/calc.PNG" alt="" /></div>
 </div>
@@ -114,3 +113,4 @@
 </div>
 
 
+<app-footer></app-footer>

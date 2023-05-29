@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="container">
   <div class="row">
     <div>
@@ -9,7 +10,7 @@
     <div class="row g-0">
       <div class="col-md-4">
         <div class="image-container">
-          <img [src]="cat?.image" alt="{{cat?.nomCategorie}}" class="img-fluid rounded-start">
+          <img [src]="cat?.image" alt="{{cat?.nomCategorie}}" class="img-fluid rounded-start" style="height: 180px;margin-left: 15px; ">
          <div class="text-container">
            <p class="text">{{imc}}</p>
          </div>
@@ -37,7 +38,7 @@
     </div>
   </div>
 
-  <div class="row" style="margin-left:250px ;margin-bottom: 100px;">
+  <div class="row" style="margin-left:100px ;margin-bottom: 100px;">
     <div class="col-md-3 col-sm-6" *ngFor="let food of foods">
       <div class="product-grid">
         <div class="product-image">
@@ -90,4 +91,26 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">Liste des Sports conseillés</h2>
+    </div>
+  </div>
+  <br> <br>
+  <div class="row" style="margin-left:250px ;margin-bottom: 100px;">
+    <div class="col-md-3 col-sm-6" *ngFor="let sport of filTabSport">
+      <div class="row row-cols-1">
+        <div class="col">
+          <div class="card">
+    <img [src]="sport.image" class="card-img-top" alt="..." style="height:200px">
+    <div class="card-body">
+      <h3  class="card-title text-center">{{sport.nomSport}}</h3>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
 </div>
+
+<app-footer></app-footer>

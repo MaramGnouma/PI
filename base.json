@@ -1,0 +1,16 @@
+{
+  "adminUsers": [
+    {
+      "Nom": "NutriScape",
+      "Prenom": "NutriScape",
+      "username": "admin",
+      "password": "admin",
+      "Gmail": "NutriScape@gmail.com",
+      "telephone": 24145973,
+      "Adresse": "Ariana",
+      "id": 1,
+      "passwordancien": "123456",
+      "passwordConfirm": "nutriscape"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap');
+.logo{
+    margin-top:0px ;
+    margin-left: 0px;
+    width:300px;
+    display: inline-block;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;  
+}
+.container
+{
+    position: relative;
+    width:100%;
+    top:0px
+}
+.navigation
+{
+    position: fixed;
+    width:250px;
+    height: 100%;
+    background: #287bff;
+    border-left: 10px solid #287bff;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active
+{
+    width:80px;
+}
+.navigation ul{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius:30px;
+    border-bottom-left-radius:30px;
+}
+.navigation ul li:hover,
+.navigation ul li .hovered{
+   background-color: #fff;
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color:#fff;
+}
+.navigation ul li:hover a  
+{
+    color: #287bff;
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation ul li a .icon i
+{
+    font-size: 1.75em;
+}
+.navigation ul li a .title
+{
+     position: relative;
+     display: block;
+     padding: 0 10px;
+     height: 60px;
+     line-height: 60px;
+     text-align: start;
+     white-space: nowrap;
+}
+.navigation ul li:hover a::before
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    top:-50px;
+    width:50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px #fff;
+    pointer-events: none;
+}
+.navigation ul li:hover a::after
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom:50px;
+    width:50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px #fff;
+    pointer-events: none;
+}
+
+.cardBox
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-gap:30px;
+}
+.cardBox .card
+{
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.cardBox .card .numbers
+{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color:#287bff;
+}
+.cardBox .card .cardName
+{
+    color:#999;
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.cardBox .card .iconBox
+{
+    position: absolute;
+    left:170px;
+    font-size:3.5em;
+    color:#999
+}
+.cardBox .card:hover
+{
+    background-color: #287bff;
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBox
+{
+    color:#fff;
+}
+.main
+{
+    position: relative;
+    width: 1100px;
+    left: 250px;
+    min-height: 100vh;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.toggle
+{
+    position: absolute;
+    top: 50;
+    width:60px;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.search
+{
+    
+    width:400px;
+    margin: 0 10px;
+    margin-top: -20px;
+    
+}
+.search label
+{
+    position: relative;
+    width:100%;
+    margin-left: 50px;
+}
+.search label input
+{
+    width:80%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    margin-top: 50px;
+    font-size: 18px;
+    outline: none;
+    border:1px solid #999
+}
+
+.userImg
+{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 5px;
+
+}
+.userImg img
+{
+    position: absolute;
+    top: 0;
+    right: 30%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+

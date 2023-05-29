@@ -8,7 +8,6 @@ import { AcceuilComponent } from './Classes/acceuil/acceuil.component';
 import { ProduitsComponent } from './Classes/produits/produits.component';
 import { ProposComponent } from './Classes/propos/propos.component';
 import { MarquesComponent } from './Classes/marques/marques.component';
-import { LoginComponent } from './Classes/login/login.component';
 import { DiagnosticComponent } from './Classes/diagnostic/diagnostic.component';
 import { ErreurComponent } from './Classes/erreur/erreur.component';
 import { FooterComponent } from './Classes/footer/footer.component';
@@ -16,8 +15,24 @@ import { FooterComponent } from './Classes/footer/footer.component';
 import { DetailProduitComponent } from './Classes/detail-produit/detail-produit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategorieComponent } from './Classes/categorie/categorie.component';
-import { FormsModule } from '@angular/forms';
-import { ListpanierComponent } from './Classes/listpanier/listpanier.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavComponent } from './admin/nav/nav.component';
+import { AddComponent } from './admin/add/add.component';
+import { LoginAdminComponent } from './admin/login-admin/login-admin.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { HeaderComponent } from './admin/header/header.component';
+import { ListeProduitsComponent } from './admin/liste-produits/liste-produits.component';
+import { UpdateProduitComponent } from './admin/update-produit/update-produit.component';
+import { LoginAdmin2Component } from './admin/login-admin2/login-admin2.component';
+import { AccountComponent } from './admin/account/account.component';
+import { UpdatePasswordComponent } from './admin/update-password/update-password.component';
+import { DetailsmatComponent } from './admin/detailsmat/detailsmat.component';
+import { AddfoodComponent } from './admin/addfood/addfood.component';
+import { DetailsfoodComponent } from './admin/detailsfood/detailsfood.component';
+import { DetailsMaterielsComponent } from './Classes/details-materiels/details-materiels.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -27,15 +42,33 @@ import { ListpanierComponent } from './Classes/listpanier/listpanier.component';
     ProduitsComponent,
     ProposComponent,
     MarquesComponent,
-    LoginComponent,
     DiagnosticComponent,
     ErreurComponent,
     FooterComponent,
     DetailProduitComponent,
     CategorieComponent,
-    ListpanierComponent,
+    NavComponent,
+    AddComponent,
+    LoginAdminComponent,
+    DashboardComponent,
+    HeaderComponent,
+    ListeProduitsComponent,
+    UpdateProduitComponent,
+    LoginAdmin2Component,
+    AccountComponent,
+    UpdatePasswordComponent,
+    DetailsmatComponent,
+    AddfoodComponent,
+    DetailsfoodComponent,
+    DetailsMaterielsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule,FormsModule],
+
+  imports: [BrowserModule,
+     AppRoutingModule,
+      HttpClientModule,
+      FormsModule,
+     ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

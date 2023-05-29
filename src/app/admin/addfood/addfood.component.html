@@ -1,0 +1,43 @@
+
+<h3>Ajouter Aliment</h3>
+<div class="container" style="margin-top: 0px;">
+    <form (ngSubmit)="onSubmit()">
+        <div>
+            designation :
+            <input type="text" class="form-control" id="designation" [(ngModel)]="clients.designation" name="designation" >
+        
+        </div>
+    <div>
+        description :
+        <input type="text" class="form-control" id="description" [(ngModel)]= "clients.description" name="description">
+    
+    </div>
+    <div>
+        Garniture :
+        <input type="text" class="form-control" id="garniture" [(ngModel)]= "clients.garniture" name="description">
+    
+    </div>
+    <div>
+        Image :
+        <input type="text" class="form-control" id="image" [(ngModel)]="clients.photo" name="designation" >
+    
+    </div>
+    <div>
+        Prix :
+        <input type="number" class="form-control" id="prix" [(ngModel)]= "clients.prix" name="prix">
+    
+    </div>
+    <div>
+        Marque :
+        <input type="text" class="form-control" id="marque" [(ngModel)]= "clients.marque" name="marque">
+    
+    </div>
+    <div>
+        quantite :
+        <input type="text" class="form-control" id="quantite" [(ngModel)]= "clients.quantite" name="quantite">
+    
+    </div>
+<br>
+    <button class="btn btn-info" type="submit">Submit</button>
+    </form>
+    </div>

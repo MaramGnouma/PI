@@ -1,0 +1,74 @@
+<br>
+<h3>liste des matériels</h3>
+<br><br>
+<div style="display: flex; justify-content: center;margin-left: 400px;margin-right: 30px;">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>designation</th>
+            <th>Prix</th>
+            <th>marque</th>
+            <th>quantite</th>
+            <th>Actions</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let c of clients">
+            <td><img [src]="c.photo" style="height: 80px;width: 80px;"></td>
+            <td>{{c.designation}}</td>
+            <td>{{c.prix}}</td>
+            <td>{{c.marque}}</td>
+            <td>{{c.quantite}}</td>
+            <td>
+                <button (click)="updateClient(c.idProduit)" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button [routerLink]="['/dash/details', c.idProduit]"  class="btn btn-info" style="margin-left: 10px;"><i class="fa-solid fa-eye"></i></button>
+
+                <button (click)="deleteClient(c.idProduit)" class="btn btn-info" style="margin-left: 10px;"><i class="fa-solid fa-trash"></i></button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<br>
+<br>
+
+
+
+<h3>liste des aliments</h3>
+<br><br>
+<div style="display: flex; justify-content: center;margin-left: 400px;margin-right: 30px;">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>designation</th>
+            <th>Prix</th>
+            <th>marque</th>
+            <th>quantite</th>
+            <th>Actions</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let c of foods">
+            <td><img [src]="c.photo" style="height: 80px;width: 80px;"></td>
+
+            <td>{{c.designation}}</td>
+            <td>{{c.prix}}</td>
+            <td>{{c.marque}}</td>
+            <td>{{c.quantite}}</td>
+            <td>
+                <button (click)="updateFood(c.idProduit)" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button [routerLink]="['/dash/detailsfood', c.idProduit]"  class="btn btn-info" style="margin-left: 10px;"><i class="fa-solid fa-eye"></i></button>
+                <button (click)="deleteFood(c.idProduit)" class="btn btn-info" style="margin-left: 10px;"><i class="fa-solid fa-trash"></i></button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,42 @@
+<ng-container >
+    <section class="container sproduct my-5 pt-5" >
+      <div class="row mt-5" style="margin-left: 150px;">
+        <div class="col-lg-5 col-md-12 col-12">
+        <img class="w-100 pb-1" [src]="materiel.photo" alt="" id="MainImg" />
+
+        <div class="small-img-group">
+          <div class="small-img-col">
+            <img [src]="materiel.photo" width="100%" class="small-img" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12 col-12">
+        <h3>{{ materiel.designation }}</h3>
+        <h2>{{ materiel.prix }}TND</h2>
+        <ul class="list">
+          <li>
+            <span>Availibility</span
+            ><span
+              *ngIf="materiel.quantite != '0'"
+              [ngClass]="{ 'color:green': materiel.quantite != '0' }"
+              >: In Stock</span
+            >
+            <span
+              *ngIf="materiel.quantite == '0'"
+              [ngClass]="{ 'color:red': materiel.quantite == '0' }"
+              >: Out Of Stock</span
+            >
+          </li>
+          <li><span>exsiting date</span><span>: 12/02/2024</span></li>
+        </ul>
+        <p>
+          {{ materiel.description }}
+        </p>
+        
+        
+      </div>
+    </div>
+    <br>
+    <button [routerLink]="['/produit']" class="btn blue-gradient">Retour <span></span></button>
+  </section>
+</ng-container>

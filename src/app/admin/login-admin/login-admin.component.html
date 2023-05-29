@@ -1,0 +1,16 @@
+<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Nutri<span>Scape</span></div>
+		</div>
+		<br>
+
+		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+		<div class="login">
+				<input type="text" placeholder="username" name="user" formControlName="username"><br>
+				<input type="password" placeholder="password" name="password" formControlName="password"><br>
+				<input type="button" value="Login" (click)="onSubmit()">
+		</div>
+		</form>
+

@@ -20,7 +20,7 @@ export class FoodServService {
   }
 
   public addfoods(food: Food): Observable<Food> {
-    return this.http.post<Food>(`${this.apiUrl}/food/addmateriel`, food);
+    return this.http.post<Food>(`${this.apiUrl}/food/addfood`, food);
   }
 
   public Updatefoods(materiel: Food, id: number): Observable<Food> {
@@ -33,5 +33,7 @@ export class FoodServService {
   public getFoodsByType(type: string): Observable<Food[]> {
     return this.http.get<Food[]>(`${this.apiUrl}/food/type/${type}`);
   }
+  
+
   
 }

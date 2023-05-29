@@ -1,0 +1,39 @@
+
+<ng-container >
+  <section class="container sproduct my-5 pt-5" >
+    <div class="row mt-5" style="margin-left: 150px;">
+      <div class="col-lg-5 col-md-12 col-12">
+        <img class="w-100 pb-1" [src]="food.photo" alt="" id="MainImg" />
+
+        <div class="small-img-group">
+          <div class="small-img-col">
+            <img [src]="food.photo" width="100%" class="small-img" />
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12 col-12">
+        <h3>{{ food.designation }}</h3>
+        <h2>{{ food.prix }}TND</h2>
+        <ul class="list">
+          <li>
+            <span>Availibility</span
+            ><span
+              *ngIf="food.quantite != '0'"
+              [ngClass]="{ 'color:green': food.quantite != '0' }"
+              >: In Stock</span
+            >
+            <span
+              *ngIf="food.quantite == '0'"
+              [ngClass]="{ 'color:red': food.quantite == '0' }"
+              >: Out Of Stock</span
+            >
+          </li>
+          <li><span>exsiting date</span><span>: 12/02/2024</span></li>
+        </ul>
+        <p>
+          {{ food.description }}
+        </p>
+      </div>
+    </div>
+  </section>
+</ng-container>

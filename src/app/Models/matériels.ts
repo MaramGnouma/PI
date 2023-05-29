@@ -1,4 +1,14 @@
 export class Matériels {
+   idProduit!: number;
+   designation!: String;
+   description!: String;
+   prix!: number;
+   photo!: String;
+   marque!: String;
+   quantite!: String;
+   promotion!: number;
+   categorie!: String
+/*
   constructor(
     public idProduit: number,
     public designation: String,
@@ -9,5 +19,5 @@ export class Matériels {
     public quantite: String,
     public promotion: number,
     public categorie: String
-  ) {}
+  ) {}*/
 }

@@ -1,4 +1,8 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Client } from 'src/app/Models/client';
+import { ClientServiceService } from 'src/app/Services/client-service.service';
 declare var $: any;
 @Component({
   selector: 'app-menu',
@@ -6,17 +10,6 @@ declare var $: any;
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  showPopup: boolean = false;
-
-  togglePopup() {
-    this.showPopup = !this.showPopup;
-  }
-
-  closePopup() {
-    this.showPopup = false;
-  }
-  constructor() {}
-
   ngOnInit(): void {
     $(document).ready(() => {
       $('.sign_in').click(() => {
@@ -49,5 +42,22 @@ export class MenuComponent implements OnInit {
     if (element) {
       element.hidden = true;
     }
+  }
+  clients: Client = new Client();
+
+  constructor(private serv: ClientServiceService, private router: Router) {}
+
+  saveClient() {
+    this.serv.addClient(this.clients).subscribe(
+      (data: any) => {
+        console.log(data);
+      },
+      (error: any) => console.log(error)
+    );
+  }
+  onSubmit() {
+    console.log(this.clients);
+    this.saveClient();
+    this.closepopup();
   }
 }

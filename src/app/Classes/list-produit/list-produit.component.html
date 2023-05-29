@@ -1,0 +1,40 @@
+<!--
+
+
+
+<div class="row" >
+    <div style="display:flex;flex-wrap:wrap">
+    <ng-container *ngFor="let item of AllData">
+       
+
+        <div class="card col-md-8">
+            <img src="" alt="">
+            <h5 style="font-weight:bolder">
+                {{item.marque}}
+            </h5>
+            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                {{item.designation}}</h5>
+                           
+            <p><strong>Price:</strong> {{item.prix}} DT</p>
+            <br>
+          
+       
+<br><br>
+            <button  (click)="addcart(item.idProduit)" class="button-85" role="button" >Ajouter au panier</button>
+        </div>
+        
+    </ng-container>
+    </div>
+
+</div>
+<br>
+-->
+<app-menu></app-menu>
+<h3>Opérations sur les produits</h3>
+<ul>
+<li *ngFor= "let p of lesProduits">
+Id: {{p.marque}} - {{p.designation}} - Prix: {{p.prix}}
+</li>
+</ul>
+
+<app-footer></app-footer>
